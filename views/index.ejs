@@ -16,16 +16,41 @@
 <!-- VENDOR SCRIPTS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
 
 <!-- APPLICATION SCRIPTS -->  
     <script src="scripts.js"></script>
 
     <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> -->
+ 
+ 
+
 </head>
 <body>
+<div id="wrapper">
+      <header>
+        <div id="header-inner">
+          <div id="logo">
+            <a href="#">Travel Mate</a>
+          </div>
 
-  <!-- nav bar container and links-->
+          <ul>
+            <li><a id="home" href="/">HOME</a></li>
+    <!-- nav bar container and links-->
+ <% include partial/signup %>
+
   <% include partial/login %>
+
+  <div class="container">
+    <div id="map-canvas"></div>
+  </div>
+  <script type="text/javascript" src="scripts.js"></script>
+
+      </div>
+      </div>
+    </div>
+
 
 
 </body>

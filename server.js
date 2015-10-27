@@ -6,14 +6,16 @@ var app         = express();
 var bodyParser  = require('body-parser');
 var mongoose    = require('mongoose');
 var db          = require ('./models/index.js');
+var session    = require('express-session');
 
+var port = process.env.PORT || 8080;
 
 // var User = require ('./models/user.js');
 // var Place = require ('./models/place.js');
 
 // connect to database
 // run mongod in another Terminal tab
-mongoose.connect('mongodb://localhost/travelmate-login');
+mongoose.connect('mongodb://localhost/travelmate');
 
 // middleware
 app.use(express.static('public'));
@@ -21,7 +23,15 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-var port = process.env.PORT || 8080;
+app.use(session({
+  saveUninitialized: true,
+  resave: true,
+  secret: 'SuperSecretCookie',
+  cookie: { maxAge: 30 * 60 * 1000 }
+}));
+
+
+
 
 
 
@@ -56,6 +66,15 @@ app.get("/users/user", function (req, res) {
   
 });
 
+
+
+
+
+
+
+
+
+
 // define REST endpoints (routes)
 var router = express.Router();
 
@@ -64,25 +83,25 @@ app.use('/api', router);  // prefix all endpoints with /api
 router.route('/users')
 
   // curl -H "Content-Type: application/json" -X POST -d '{"firstname":"aaron", "lastname":"cody", "email":"aaron@aaron.com", "passwordDigest":"djhgfdshgfjhdg"}' http://localhost:8080/api/users/
-  // .post(function(req,res){  // creates new user
+  .post(function(req,res){  // creates new user
 
-  //   var user = db.user.createSecure();
-  //   user.firstname = req.body.firstname;
-  //   user.lastname = req.body.lastname;
-  //   user.email = req.body.email;
-  //   user.passwordDigest = req.body.passwordDigest;
+    var user = db.user.createSecure();
+    user.firstname = req.body.firstname;
+    user.lastname = req.body.lastname;
+    user.email = req.body.email;
+    user.passwordDigest = req.body.passwordDigest;
 
-  //   user.save(function(err){
-  //     if (err)
-  //       res.send(err);
+    user.save(function(err){
+      if (err)
+        res.send(err);
 
-  //     var msg = 'creating new user...'+user.firstname;
-  //     res.json({message: msg});
-  //     console.log(msg);
+      var msg = 'creating new user...'+user.firstname;
+      res.json({message: msg});
+      console.log(msg);
 
-  //   });
+    });
 
-  // })
+  })
 
   // curl -X GET http://localhost:8080/api/users/
   .get(function(req,res){   // gets all users

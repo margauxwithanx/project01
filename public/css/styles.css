@@ -15,14 +15,28 @@ body {
     }
 }
 
-* {
-    box-sizing: border-box;
-   font-family: 'Didact Gothic', sans-serif;
+#map-canvas {
+  border-style: outset;
+  height: 500px;
+  margin: auto;
+  padding: 0;
+  width: 100%;
 }
 
-::-webkit-input-placeholder {
-   font-family: 'Didact Gothic', sans-serif;
+.container {
+  padding-bottom: 2em;
+  width:100%;
 }
+
+
+/** {
+    box-sizing: border-box;
+   font-family: 'Didact Gothic', sans-serif;
+}*/
+
+/*::-webkit-input-placeholder {
+   font-family: 'Didact Gothic', sans-serif;
+}*/
 
 #wrapper {
     width: 100%;
@@ -74,29 +88,75 @@ header li {
     padding-left: 5px;
 }
 
-header li > a {
+/*nav home*/
+header li > a[id="home"] {
     text-decoration: none;
     display: block;
-    font-size: 1.2em;
+    font-size: 1.3em;
     color: #666;
     padding: 7px 10px;
     transition: all .1s;
     font-family: 'Didact Gothic', sans-serif;
 }
 
-header li > a:hover {
-    background: #f7f7f7;
-    border-radius: .2em;
-    -webkit-box-shadow: inset 0 0 0 1px #ededed;
+/*arrow*/
+/*header span .arrow-up {
+    width: 0; 
+    height: 0;
+    position: absolute;
+    top: -12px;
+    right: 87px;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid #ededed;
+}*/
+
+/*arrow*/
+/*header span .arrow-up-top {
+    width: 0; 
+    height: 0;
+    position: absolute;
+    top: -11px;
+    right: 88px;
+    border-left: 11px solid transparent;
+    border-right: 11px solid transparent;
+    border-bottom: 11px solid #fff;
+}*/
+
+header li > span.visible {
+    padding: 10px 5px;
+    margin: 0 auto;
 }
 
+
+
+/*nav log-in*/
+header li > a[id="log-in"] {
+    text-decoration: none;
+    display: block;
+    font-size: 1.3em;
+    border-radius: .2em;
+    border-color: #1d97ec;
+    color: #1d97ec;
+    padding: 7px 10px;
+    transition: all .1s;
+    font-family: 'Didact Gothic', sans-serif;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1.8px;
+    cursor: auto;
+  
+}
+
+/*log-in-view*/
 header li > span.visible {
   display: block;
 }
 
-header li > span {
+/*log-in-box*/
+header li > [id="log-in-menu"] {
     width: auto;
-    height: 170px;
+    height: 150px;
     position: absolute;
     background: #fff;
     border: thin solid #ededed;
@@ -108,81 +168,124 @@ header li > span {
     display: none;
 }
 
-header span .arrow-up {
-    width: 0; 
-    height: 0;
-    position: absolute;
-    top: -12px;
-    right: 87px;
-    border-left: 12px solid transparent;
-    border-right: 12px solid transparent;
-    border-bottom: 12px solid #ededed;
-}
-
-header span .arrow-up-top {
-    width: 0; 
-    height: 0;
-    position: absolute;
-    top: -11px;
-    right: 88px;
-    border-left: 11px solid transparent;
-    border-right: 11px solid transparent;
-    border-bottom: 11px solid #fff;
-}
-
-header span .form {
-    padding: 15px 10px;
-}
-
-
-
-header li > span input {
+/*login signup button*/
+header li > span input { 
     padding: 5px 10px;
     margin: 0 auto;
     margin-bottom: 10px;
     border-radius: .2em;
     border: thin solid #ededed;
     outline: none;
-    font-size: 1.2em;
+    font-size: 1.3em;
     color: #666;
     display: block;
     transition: all .15s;
 }
 
-header li > span input:focus {
-    background: #f9f9f9;
-    color: #ccc;
-}
-
-header li > span .submit-area{
+/*login button-submit-size*/
+header li > span .log-in-submit{
     width: 100%;
-    padding: 10px 10px;
     display: inline-block;
     background: #f9f9f9;
     border-top: thin solid #ededed;
 }
 
-header li > span input[type=submit] {
+
+/*login button-submit-color*/
+header li > span input[type=submit].log-in-submit {
     margin-bottom: 0;
     width: 100%;
-    background: #434a54;
+    background-color: #1d97ec;
     color: #fff;
-    font-size: 1.2em;
+    font-size: 1.3em;
     vertical-align: baseline;
     float: left;
     border-radius: .3em;
 }
 
-header li > span input[type=submit]:hover {
-    -webkit-box-shadow: 0 0 0 1px #383e46;
+/*login button-submit-glow*/
+header li > span input[type=submit].log-in-submit:hover {
+    -webkit-box-shadow: 0 0 0 1px #1d97ec;
 }
 
+
+
+/*nav sign-up*/
+header li > a[id="sign-up"] {
+    text-decoration: none;
+    display: block;
+    font-size: 1.3em;
+    border-radius: .2em;
+    border-color: rgb(226, 97, 68);
+    color: rgb(226, 97, 68);
+    padding: 7px 10px;
+    transition: all .1s;
+    font-family: 'Didact Gothic', sans-serif;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1.8px;
+    cursor: auto;
+}
+
+/*sign-up-view*/
+header li > span.visible {
+  display: block;
+}
+
+/*sign-up-box*/
+header li >[id="sign-up-menu"] {
+    width: auto;
+    height: 282px;
+    position: absolute;
+    background: #fff;
+    border: thin solid #ededed;
+    border-radius: .2em;
+    right: 10%;
+    top: 55px;
+    z-index: 100;
+    text-align: center;
+    display: none;
+}
+
+
+/*signup button-submit-size*/
+header li > span .sign-up-submit{
+    width: 100%;
+    display: inline-block;
+    background: #f9f9f9;
+    border-top: thin solid #ededed;
+}
+
+
+/*signup button-submit-color*/
+header li > span input[type=submit].sign-up-submit {
+    margin-bottom: 0;
+    width: 100%;
+    background-color: #e26144;
+    color: #fff;
+    font-size: 1.3em;
+    vertical-align: baseline;
+    float: left;
+    border-radius: .3em;
+}
+
+/*signup button-submit-glow*/
+header li > span input[type=submit].sign-up-submit:hover {
+    -webkit-box-shadow: 0 0 0 1px #e26144;
+
 input[class=form-control] {
-    font-size: 1em;
+    font-size: 1.2em;
     font-family: 'Didact Gothic', sans-serif;
 }
 
-input[type=checkbox].css-checkbox {
+
+
+/*header li > span input:focus {
+    background: #f9f9f9;
+    color: #ccc;
+}*/
+
+/*input[type=checkbox].css-checkbox {
     display:none;
  }
 
@@ -201,13 +304,11 @@ input[type=checkbox].css-checkbox + label.css-label {
     font-size: 1.2em;
     color: #666;
     text-align: left;
-}
+}*/
 
-input[type=checkbox].css-checkbox:checked + label.css-label {
-    background-position: 0 -12px;
-}
 
-label.css-label {
+
+/*label.css-label {
     background-size: 12px;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -215,9 +316,9 @@ label.css-label {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-}
+}*/
 
-#content {
+/*#content {
     width: 49%;
     height: auto;
     margin: 0 auto;
@@ -231,4 +332,4 @@ label.css-label {
     background: #fff;
     border: thin solid #ededed;
     border-radius: .2em;
-}
+}*/
