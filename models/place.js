@@ -1,4 +1,5 @@
-// placejs
+/* PLACES
+-------------------------------------------------*/
 
 // require dependencies
 var mongoose = require('mongoose');

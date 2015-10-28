@@ -1,7 +1,7 @@
 /* GENERAL
 -------------------------------------------------*/
 body {
-    background-color: #f7f7f7;
+    background-color: white;
     background-size: cover;
     background-position: top;
     font-size: 100%;
@@ -22,6 +22,7 @@ header {
     width: 100%;
     height: auto;
     position: fixed;
+    position: absolute;
     top: 0;
     right: 0;
     left: 0;
@@ -75,34 +76,12 @@ header li > a[id="home"] {
     font-family: 'Didact Gothic', sans-serif;
 }
 
-/*arrow*/
-/*header span .arrow-up {
-    width: 0; 
-    height: 0;
-    position: absolute;
-    top: -12px;
-    right: 87px;
-    border-left: 12px solid transparent;
-    border-right: 12px solid transparent;
-    border-bottom: 12px solid #ededed;
-}*/
-
-/*arrow*/
-/*header span .arrow-up-top {
-    width: 0; 
-    height: 0;
-    position: absolute;
-    top: -11px;
-    right: 88px;
-    border-left: 11px solid transparent;
-    border-right: 11px solid transparent;
-    border-bottom: 11px solid #fff;
-}*/
-
 header li > span.visible {
     padding: 10px 5px;
     margin: 0 auto;
 }
+
+
 
 /* SEARCH
 -------------------------------------------------*/
@@ -117,43 +96,14 @@ header li > span.visible {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
-#pac-input {
-  background-color: #fff;
-  font-family: Roboto;
-  font-size: 15px;
-  font-weight: 300;
-  margin-left: 12px;
-  padding: 0 11px 0 13px;
-  text-overflow: ellipsis;
-  width: 300px;
-}
-
-#pac-input:focus {
-  border-color: #4d90fe;
-}
-
-.pac-container {
-  font-family: Roboto;
-}
-
-#type-selector {
-  color: #fff;
-  background-color: #4d90fe;
-  padding: 5px 11px 0px 11px;
-}
-
-#type-selector label {
-  font-family: Roboto;
-  font-size: 13px;
-  font-weight: 300;
-}
-
 
 
 
 /* LOGIN
 -------------------------------------------------*/
 /*nav log-in*/
+
+
 header li > a[id="log-in"] {
     text-decoration: none;
     display: block;
@@ -167,9 +117,7 @@ header li > a[id="log-in"] {
     border-radius: 5px;
     border-style: solid;
     border-width: 1.8px;
-    cursor: auto;
-
-  
+    cursor: auto; 
 }
 
 /*log-in-view*/
@@ -185,9 +133,8 @@ header li > [id="log-in-menu"] {
     background: #fff;
     border: thin solid #ededed;
     border-radius: .2em;
-    right: 10%;
     top: 55px;
-    z-index: 2;
+    z-index: 3;
     text-align: center;
     display: none;
     box-shadow: 0 6px 12px rgba(0,0,0,.175);
@@ -233,6 +180,29 @@ header li > span input[type=submit].log-in-submit:hover {
     -webkit-box-shadow: 0 0 0 1px #1d97ec;
 }
 
+/*arrow*/
+/*header span .arrow-up {
+    width: 0; 
+    height: 0;
+    position: absolute;
+    top: -12px;
+    right: 87px;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid #ededed;
+}*/
+
+/*arrow*/
+/*header span .arrow-up-top {
+    width: 0; 
+    height: 0;
+    position: absolute;
+    top: -11px;
+    right: 88px;
+    border-left: 11px solid transparent;
+    border-right: 11px solid transparent;
+    border-bottom: 11px solid #fff;
+}*/
 
 
 /* SIGNUP 
@@ -267,9 +237,8 @@ header li >[id="sign-up-menu"] {
     background: #fff;
     border: thin solid #ededed;
     border-radius: .2em;
-    right: 10%;
     top: 55px;
-    z-index: 3;
+    z-index: 4;
     text-align: center;
     display: none;
     box-shadow: 0 6px 12px rgba(0,0,0,.175);
@@ -305,6 +274,8 @@ input[class=form-control] {
     font-size: 1.2em;
     font-family: 'Didact Gothic', sans-serif;
 }
+
+
 
 
 

@@ -19,8 +19,8 @@ var port = process.env.PORT || 8080;
 mongoose.connect('mongodb://localhost/travelmate');
 
 //API ENV setup
-require('dotenv').load();
-var gMaps = process.env.G_API_KEY;
+// require('dotenv').load();
+// var gMaps = process.env.G_API_KEY;
 
 /* MIDDLEWARE
 -------------------------------------------------*/

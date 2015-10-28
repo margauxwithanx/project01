@@ -1,25 +1,65 @@
 
+<!-- NEW MARK FORM -->
 <div id="formWrapper">
-	<form action="" method="POST" role="form">
-    	<legend>Form title</legend>
-    
-    	<div class="form-group">
-    		<label for="">label</label>
-    		<input type="text" class="form-control" id="" placeholder="Input field">
-    	</div>
-    
-    	
-    
-    	<button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+    <form action="" method="POST" role="form">
+        <legend>OH THE PLACES YOU'VE BEEN</legend>
 
-</div>
+    <div class="form-group">
+        <!-- <div class="row"></div> -->
+            <label for="">VISITED ANY PLACES YOU LIKE? </br>
+            MAP THEM OUT FOR YOUR NEXT TRIP </br>
+            OR TO SHARE WITH FRIENDS. </label>
+            
+            
+                <input type="text" id="map-search" id= "marginspacing" class="form-control" name="place" placeholder="Search" autofocus>
+                <form id="new-mark-form">
+                    <!-- Hidden  -->
+                    <input type="hidden" id="mark-name" name="placeName" value="">
+                    <input type="hidden" id="mark-address" name="address" value="">
+                    <input type="hidden" id="mark-lat" name="latitude" value="">
+                    <input type="hidden" id="mark-lng" name="longitude" value="">
+
+                    <!-- Visible -->
+
+                    <input type="text" class="form-control" id= "marginspacing" name="city" placeholder="Which city are you in?" required>
+
+                    <select class="form-control" id= "marginspacing" name="place-visited" required>
+                      <option>Hotel</option>
+                      <option>Restaurant</option>
+                      <option>Bar/Club</option>
+                      <option>Museum</option>
+                      <option>Sights</option>
+                      <option>Shop</option>
+                    </select>
+
+                       <select class="form-control" id= "marginspacing" name="pricing" >
+                      <option>A penny or 2</option>
+                      <option>For a few more dollars</option>
+                      <option>Special night out </option>
+                      <option>Too rich for my blood</option>
+                    </select>
+
+                      <select class="form-control" id= "marginspacing" name="rating" >
+                      <option>1 Star</option>
+                      <option>2 Stars</option>
+                      <option>3 Stars</option>
+                      <option>4 Stars</option>
+                      <option>All the stars in the sky</option>
+                    </select>
+
+                    <textarea class="form-control" rows="3" id= "marginspacing" name="notes" placeholder="Give us the scoop!" required></textarea>
+
+                     <button type="submit" id= "marginspacing" class="btn btn-primary">SUBMIT</button>
+
+                </form>
+            </div><!-- form col ends -->
+
+        </div><!-- row ends -->
+    </div><!-- form-group ends -->
+
 <div id="mapWrapper">
     <div id='map'></div>
-</div>   
-
-
-
+</div> 
 
 
 
