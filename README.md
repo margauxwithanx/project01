@@ -1,5 +1,6 @@
 ## **CONCEPT OF PROJECT 01**
 =====================
+
 Time to discover the world with a little help from your friends. You will have your own personal travel agent 
 by your side accessing her recommendations of the city and country that she has visited previously. 
 From accommodation, restaurants, bars & must-see attractions, she has mapped them out and sharing all 
@@ -21,6 +22,5 @@ need to know about your next travel spot.
 - Recos –( Short for recommendations )
 
 
-```
 Here is my *[Trello Link](https://trello.com/b/331zLGJC/project-01)* & *[Submission Form 01](https://docs.google.com/forms/d/1qGmowWWRpWKDsSralVXkgUYgfPcBPPCpgjIZaPZMjnU/viewform?fbzx=2814274452174159457)*
-```
+
