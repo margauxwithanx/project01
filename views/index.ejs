@@ -6,53 +6,50 @@
   
   <title>TravelMate | Travel Recommendations By Friends</title>
 
+
+
 <!-- STYLESHEETS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/maps.css">
     <link href='https://fonts.googleapis.com/css?family=Didact+Gothic' rel='stylesheet' type='text/css'>
 
     <script src="//code.jquery.com/jquery.js"></script>
 
 <!-- VENDOR SCRIPTS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    
+    <script src="https://maps.googleapis.com/maps/api/js?key=<% gMaps %>&sensor=false&libraries=places">
+    //remember to not push to github with key
+   </script>
+
 
 <!-- APPLICATION SCRIPTS -->  
     <script src="scripts.js"></script>
 
     <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> -->
- 
- 
 
 </head>
 <body>
-<div id="wrapper">
-      <header>
-        <div id="header-inner">
-          <div id="logo">
-            <a href="#">Travel Mate</a>
-          </div>
+    <header>
+      <div id="header-inner">
+        <div id="logo">
+        <a href="#">Travel Mate</a>
+        </div>
 
-          <ul>
-            <li><a id="home" href="/">HOME</a></li>
-    <!-- nav bar container and links-->
- <% include partial/signup %>
+        <ul>
+          <li><a id="home" href="/">HOME</a></li>
+          <!-- nav bar container and links-->
+          <% include partial/signup %>
+          <% include partial/login %>
+        </ul>
+      </div>
+    </header>
+    <% include partial/map %>      
 
-  <% include partial/login %>
-
-  <div class="container">
-    <div id="map-canvas"></div>
   </div>
-  <script type="text/javascript" src="scripts.js"></script>
-
-      </div>
-      </div>
-    </div>
-
-
-
 </body>
 
 </html>

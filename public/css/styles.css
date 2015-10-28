@@ -1,5 +1,7 @@
+/* GENERAL
+-------------------------------------------------*/
 body {
-    background: #f7f7f7;
+    background-color: #f7f7f7;
     background-size: cover;
     background-position: top;
     font-size: 100%;
@@ -12,35 +14,9 @@ body {
     text-indent: 0;
     text-shadow: none;
     line-height: 1.5;
-    }
-}
-
-#map-canvas {
-  border-style: outset;
-  height: 500px;
-  margin: auto;
-  padding: 0;
-  width: 100%;
-}
-
-.container {
-  padding-bottom: 2em;
-  width:100%;
 }
 
 
-/** {
-    box-sizing: border-box;
-   font-family: 'Didact Gothic', sans-serif;
-}*/
-
-/*::-webkit-input-placeholder {
-   font-family: 'Didact Gothic', sans-serif;
-}*/
-
-#wrapper {
-    width: 100%;
-}
 
 header {
     width: 100%;
@@ -128,8 +104,55 @@ header li > span.visible {
     margin: 0 auto;
 }
 
+/* SEARCH
+-------------------------------------------------*/
+.controls {
+  margin-top: 10px;
+  border: 1px solid transparent;
+  border-radius: 2px 0 0 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  height: 32px;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+#pac-input {
+  background-color: #fff;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+  margin-left: 12px;
+  padding: 0 11px 0 13px;
+  text-overflow: ellipsis;
+  width: 300px;
+}
+
+#pac-input:focus {
+  border-color: #4d90fe;
+}
+
+.pac-container {
+  font-family: Roboto;
+}
+
+#type-selector {
+  color: #fff;
+  background-color: #4d90fe;
+  padding: 5px 11px 0px 11px;
+}
+
+#type-selector label {
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 300;
+}
 
 
+
+
+/* LOGIN
+-------------------------------------------------*/
 /*nav log-in*/
 header li > a[id="log-in"] {
     text-decoration: none;
@@ -145,6 +168,7 @@ header li > a[id="log-in"] {
     border-style: solid;
     border-width: 1.8px;
     cursor: auto;
+
   
 }
 
@@ -163,9 +187,10 @@ header li > [id="log-in-menu"] {
     border-radius: .2em;
     right: 10%;
     top: 55px;
-    z-index: 100;
+    z-index: 2;
     text-align: center;
     display: none;
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
 }
 
 /*login signup button*/
@@ -210,6 +235,8 @@ header li > span input[type=submit].log-in-submit:hover {
 
 
 
+/* SIGNUP 
+-------------------------------------------------*/
 /*nav sign-up*/
 header li > a[id="sign-up"] {
     text-decoration: none;
@@ -242,9 +269,10 @@ header li >[id="sign-up-menu"] {
     border-radius: .2em;
     right: 10%;
     top: 55px;
-    z-index: 100;
+    z-index: 3;
     text-align: center;
     display: none;
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
 }
 
 

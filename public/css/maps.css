@@ -1,0 +1,51 @@
+/* MAP
+-------------------------------------------------*/
+#map {
+	height: 500px;
+}
+
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+
+/* Fix me later */
+#mapWrapper {
+    max-height: 400px;
+    position: relative;
+    margin-top: 60px;
+    margin-left: 0px;
+    width:70%;
+    max-width: 900px;
+    z-index: 1;
+}
+
+#formWrapper {
+	float: right;
+	clear: left;
+	width:30%;
+	max-width: 200px;
+}
+
+/*
+#map-canvas {
+  height: 200px;
+  width: 200px;
+}
+
+.container {
+  padding-bottom: 2em;
+  width:100%;
+}
+*/
+
+/** {
+    box-sizing: border-box;
+   font-family: 'Didact Gothic', sans-serif;
+}*/
+
+/*::-webkit-input-placeholder {
+   font-family: 'Didact Gothic', sans-serif;
+}*/

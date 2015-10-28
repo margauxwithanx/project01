@@ -1,4 +1,5 @@
-// user.js
+/* USER.JS
+-------------------------------------------------*/
 
 // require dependencies
 var mongoose = require('mongoose');
@@ -20,7 +21,7 @@ userSchema.statics.createSecure = function (firstname, lastname, username, email
   // `this` references our schema 
   // store it in variable `user` because `this` changes context in nested callbacks
   var userModel = this;
-    console.log("this inside createSecure:", user);
+    console.log("this inside createSecure:", userModel);
 
   // hash password user enters at sign up
   bcrypt.genSalt(10,function (err, salt) {

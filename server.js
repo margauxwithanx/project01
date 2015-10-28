@@ -1,4 +1,5 @@
-// server.js
+/* GENERAL 
+-------------------------------------------------*/
 
 // require express framework and additional modules
 var express     = require('express');
@@ -17,7 +18,12 @@ var port = process.env.PORT || 8080;
 // run mongod in another Terminal tab
 mongoose.connect('mongodb://localhost/travelmate');
 
-// middleware
+//API ENV setup
+require('dotenv').load();
+var gMaps = process.env.G_API_KEY;
+
+/* MIDDLEWARE
+-------------------------------------------------*/
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
@@ -32,14 +38,18 @@ app.use(session({
 
 
 
-
-
-
+app.get('/map', function (req, res){
+  res.render('map.ejs');
+});
 
 app.get('/', function (req, res){
   res.render('index.ejs');
 });
 
+
+
+/* SIGNUP & LOGIN
+-------------------------------------------------*/
 // signup route with placeholder response
 app.get('/signup', function (req, res) {
   res.render('signup');
@@ -52,9 +62,11 @@ app.get('/login', function (req, res) {
 
 // Sign up route - creates a new user with a secure password
 app.post('/users', function (req, res) {
+  
   console.log (req.body);
   // use the email and password to authenticate here
-  db.User.createSecure(req.body.firstname, req.body.lastname, req.body.email, req.body.password, function (err, user) {
+  db.User.createSecure(req.body.firstname, req.body.lastname, req.body.email, req.body.username[0], req.body.password[0], function (err, user) {
+    console.log (err, user);
     res.json(user);
   });
 });
@@ -74,7 +86,8 @@ app.get("/users/user", function (req, res) {
 
 
 
-
+/* ROUTES: USER
+-------------------------------------------------*/
 // define REST endpoints (routes)
 var router = express.Router();
 
@@ -188,7 +201,8 @@ router.route('/users/:user_id')
 
 
 
-// Routes for places go here :.......
+/* ROUTES: PLACES
+-------------------------------------------------*/
 router.route('/places')
 
   // curl -H "Content-Type: application/json" -X POST -d '{"locationCoordinates":"Zazie", "city":"SanFrancisco", "type":"restaurant", "creator":"user"}' http://192.168.0.125:8080/api/places/
@@ -314,7 +328,8 @@ router.route('/places/:place_id')
   });
   /////////////
 
-
+/* PORT
+-------------------------------------------------*/
 app.listen(port, function () {
   console.log('server started on locahost:'+port);
 });

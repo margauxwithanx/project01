@@ -17,3 +17,7 @@ var PlaceSchema = new Schema({
 });
 
 module.exports = mongoose.model('Place', PlaceSchema);
+
+
+//add business name, latitude, longitude, address
+
