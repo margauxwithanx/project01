@@ -128,7 +128,7 @@ header li > span.visible {
 /*log-in-box*/
 header li > [id="log-in-menu"] {
     width: auto;
-    height: 150px;
+    height: auto;
     position: absolute;
     background: #fff;
     border: thin solid #ededed;
@@ -139,6 +139,7 @@ header li > [id="log-in-menu"] {
     display: none;
     box-shadow: 0 6px 12px rgba(0,0,0,.175);
 }
+
 
 /*login signup button*/
 header li > span input { 
@@ -204,6 +205,27 @@ header li > span input[type=submit].log-in-submit:hover {
     border-bottom: 11px solid #fff;
 }*/
 
+/* LOGOUT
+-------------------------------------------------*/
+
+#greeting, #user-profile, #logout-btn {
+    text-decoration: none;
+    display: block;
+    font-size: 1.3em;
+    color: #666;
+    padding: 7px 10px;
+    transition: all .1s;
+    font-family: 'Didact Gothic', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0;
+    text-shadow: none;
+    line-height: 1.5;
+}    
+
 
 /* SIGNUP 
 -------------------------------------------------*/
@@ -232,7 +254,7 @@ header li > span.visible {
 /*sign-up-box*/
 header li >[id="sign-up-menu"] {
     width: auto;
-    height: 282px;
+    height: auto;
     position: absolute;
     background: #fff;
     border: thin solid #ededed;
@@ -257,7 +279,7 @@ header li > span .sign-up-submit{
 /*signup button-submit-color*/
 header li > span input[type=submit].sign-up-submit {
     margin-bottom: 0;
-    width: 100%;
+   /* width: 100%;*/
     background-color: #e26144;
     color: #fff;
     font-size: 1.3em;

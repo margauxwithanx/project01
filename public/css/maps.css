@@ -3,7 +3,7 @@
 #map {
 	height: 550px;
 	position: relative;
-	max-width: 900px;
+	max-width: 1200px;
 	z-index: 1;
 }
 
@@ -20,8 +20,8 @@ html, body {
     position: relative;
     margin-top: 60px;
     margin-left: 0px;
-    width:100%;
-    max-width: 900px;
+    width:200%;
+    max-width: 1200px;
     z-index: 1;
     overflow: hidden
 }
@@ -62,8 +62,8 @@ label {
     right: 0px;
     width: auto;
     height: 550px;
-    min-width: 300px;
-    max-width: 600px;
+    min-width: 450px;
+    max-width: 1000px;
     padding: 20px;
     border-top: 5px;
     border-bottom: 5px;

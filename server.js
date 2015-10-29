@@ -19,11 +19,13 @@ var port = process.env.PORT || 8080;
 mongoose.connect('mongodb://localhost/travelmate');
 
 //API ENV setup
-// require('dotenv').load();
+
 // var gMaps = process.env.G_API_KEY;
+// app.use(cookieParser());
 
 /* MIDDLEWARE
 -------------------------------------------------*/
+
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
@@ -37,6 +39,10 @@ app.use(session({
 }));
 
 
+
+
+/* GET MAP
+-------------------------------------------------*/
 
 app.get('/map', function (req, res){
   res.render('map.ejs');
@@ -198,7 +204,6 @@ router.route('/users/:user_id')
     });
 
   });
-
 
 
 /* ROUTES: PLACES

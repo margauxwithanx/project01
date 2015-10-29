@@ -8,31 +8,47 @@ var bcrypt = require('bcrypt');
 var salt = bcrypt.genSaltSync(10);
 
 
+//set email to lowercase
+function toLower (v) {
+  return v.toLowerCase();
+} 
 // define user schema
-var userSchema = new Schema({
-   firstname: String,
-   lastname: String,
-   email: String,
-   passwordDigest: String
+var userSchema = mongoose.Schema({
+  firstname: { type: String,
+        required: true,
+        unique: true},
+  lastname: { type: String,
+        required: true,
+        unique: true},      
+  username: { type: String,
+        required: true,
+        unique: true},
+  email: { type: String,
+        required: true,
+        unique: true},
+  passwordDigest: String,
+  places: [{type: Schema.Types.ObjectId, ref: 'Place'}]
 });
+
+
 
 // create a new user with secure (hashed) password
 userSchema.statics.createSecure = function (firstname, lastname, username, email, password, callback) {
   // `this` references our schema 
   // store it in variable `user` because `this` changes context in nested callbacks
   var userModel = this;
-    console.log("this inside createSecure:", userModel);
+    // console.log("this inside createSecure:", userModel);
 
   // hash password user enters at sign up
-  bcrypt.genSalt(10,function (err, salt) {
-    console.log('salt: ', salt);  // changes every time
+  bcrypt.genSalt(function (err, salt) {
     bcrypt.hash(password, salt, function (err, hash) {
-      console.log(hash);
+     
 
       // create the new user (save to db) with hashed password
       userModel.create({ //Looks like Model
         firstname: firstname,
         lastname: lastname,
+        username: username,
         email: email,
         passwordDigest: hash
       }, callback);
@@ -44,7 +60,7 @@ userSchema.statics.createSecure = function (firstname, lastname, username, email
 userSchema.statics.authenticate = function (username, password, callback) {
   // find user by username entered at log in
   this.findOne({username: username}, function (err, foundUser) {
-    console.log(foundUser);
+  
 
     // throw error if can't find user
     if (!foundUser) {
@@ -68,8 +84,8 @@ userSchema.methods.checkPassword = function (password) {
 
 
 // // export user model// define user model; need the above before can turn it into a model
-module.exports = mongoose.model('User', userSchema);
-//var User = mongoose.model('User', userSchema);
+// module.exports = mongoose.model('User', userSchema);
+var user = mongoose.model('User', userSchema);
 
 // // export user model
-// module.exports = User;
+module.exports = user;

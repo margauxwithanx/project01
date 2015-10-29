@@ -1,24 +1,24 @@
-/* PLACES
+/* PLACE.JS
 -------------------------------------------------*/
 
 // require dependencies
 var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
 
 // define user schema
-var PlaceSchema = new Schema({
-   locationCoordinates: String,
-   city: String,
-   type: String,
-   creator: String,
-   notes: String,
-   cost: String,
-   rating: String,
-   url: String
+var PlaceSchema = mongoose.Schema({
+   placeName: String,
+   address: String,
+   latitude: { type: Number, required: true},
+   longitude: { type: Number, required: true},
+   		city: String,
+   		placeVisited: String,
+   		pricing: String,
+  		   rating: String,
+   		notes: String,
+         createdAt: {type: Date, required: true, expireAfterSeconds: 3600, default: Date.now}
+   		
 });
 
-module.exports = mongoose.model('Place', PlaceSchema);
+var Place = mongoose.model('Place', PlaceSchema);
 
-
-//add business name, latitude, longitude, address
-
+module.exports = Place;

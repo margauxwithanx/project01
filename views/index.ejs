@@ -17,17 +17,19 @@
     <script src="//code.jquery.com/jquery.js"></script>
 
 <!-- VENDOR SCRIPTS -->
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-    
-    <script src="https://maps.googleapis.com/maps/api/js?key=<% gMaps %>&sensor=false&libraries=places">
-    //remember to not push to github with key
-   </script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpiG5ri7hCsG_yWgjvwt9qfun-OGqLEWc&libraries=places"></script>
+   <!-- remember to not push to github with key--> 
+   
 
 
 <!-- APPLICATION SCRIPTS -->  
-    <script src="scripts.js"></script>
+    <script src="/js/auth_val.js"></script>
+    <script src="js/scripts.js"></script>
 
     <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> -->
 
@@ -41,8 +43,8 @@
 
         <ul>
           <li><a id="home" class="home" href="/">HOME</a></li>
+          <li><a href="/profile" class="logged-in" style="display:none" id="user-profile" >MY MAP</a></li>
           <!-- nav bar container and links-->
-          <% include partial/signup %>
           <% include partial/login %>
         </ul>
       </div>
