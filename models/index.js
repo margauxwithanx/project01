@@ -14,8 +14,8 @@ var db = mongoose.connection;
   	console.log("Hello There");
 });
 	
-var Place = require('./place.js');
-var User = require('./user.js');
+// var Place = require('./place.js');
+// var User = require('./user.js');
 
 
 module.exports.Place = require('./place.js');

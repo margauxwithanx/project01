@@ -5,7 +5,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var bcrypt = require('bcrypt');
-var salt = bcrypt.genSaltSync(10);
+// var salt = bcrypt.genSaltSync(10);
 
 
 //set email to lowercase
@@ -13,7 +13,7 @@ function toLower (v) {
   return v.toLowerCase();
 } 
 // define user schema
-var userSchema = mongoose.Schema({
+var UserSchema = mongoose.Schema({
   firstname: { type: String,
         required: true,
         unique: true},
@@ -33,7 +33,7 @@ var userSchema = mongoose.Schema({
 
 
 // create a new user with secure (hashed) password
-userSchema.statics.createSecure = function (firstname, lastname, username, email, password, callback) {
+UserSchema.statics.createSecure = function (firstname, lastname, username, email, password, callback) {
   // `this` references our schema 
   // store it in variable `user` because `this` changes context in nested callbacks
   var userModel = this;
@@ -45,7 +45,7 @@ userSchema.statics.createSecure = function (firstname, lastname, username, email
      
 
       // create the new user (save to db) with hashed password
-      userModel.create({ //Looks like Model
+      UserModel.create({ //Looks like Model
         firstname: firstname,
         lastname: lastname,
         username: username,
@@ -57,7 +57,7 @@ userSchema.statics.createSecure = function (firstname, lastname, username, email
 };
 
 // authenticate user (when user logs in)
-userSchema.statics.authenticate = function (username, password, callback) {
+UserSchema.statics.authenticate = function (username, password, callback) {
   // find user by username entered at log in
   this.findOne({username: username}, function (err, foundUser) {
   
@@ -72,12 +72,11 @@ userSchema.statics.authenticate = function (username, password, callback) {
     } else {
       callback ("Error: incorrect password", null);
     }
-
   });
 };
 
 // compare password user enters with hashed password (`password`)
-userSchema.methods.checkPassword = function (password) {
+UserSchema.methods.checkPassword = function (password) {
   // run hashing algorithm (with salt) on password user enters in order to compare with `password`
   return bcrypt.compareSync(password, this.passwordDigest);
 };
@@ -85,7 +84,7 @@ userSchema.methods.checkPassword = function (password) {
 
 // // export user model// define user model; need the above before can turn it into a model
 // module.exports = mongoose.model('User', userSchema);
-var user = mongoose.model('User', userSchema);
+var User = mongoose.model('User', UserSchema);
 
 // // export user model
-module.exports = user;
+module.exports = User;

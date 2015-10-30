@@ -22,18 +22,18 @@ $(document).ready(function(){
    });
   }
 
-  checkAuth();
+
+  // uncomment the next line to authenticate whether there is a current user on page load
+ // checkAuth();
 
 
   $('#sign-up-form').validate({
       rules: {
         firstname:{
-          required:true,
-          minlength:6
+          required:true
         },
         lastname:{
-          required:true,
-          minlength:6
+          required:true
         },
         username:{
           required:true,
@@ -46,11 +46,6 @@ $(document).ready(function(){
           password:{
             required:true,
               minlength : 8
-          },
-          confirmPassword : {
-            required:true,
-              minlength : 8,
-              equalTo : "#password"
           }
       },
       messages:{
@@ -61,11 +56,6 @@ $(document).ready(function(){
           password:{
             required:"You must enter a password.",
             minlength:"Your password must be more than 8 characters."
-          },
-          confirmPassword:{
-              required: "You must confirm your password.",
-              minlength: "Your password must contain more than 8 characters.",
-              equalTo: "Your passwords must match." 
           }
       }
   });
@@ -105,14 +95,14 @@ $(document).ready(function(){
       var signUpForm = $(this).serialize();
 
       $.ajax({
-          url: "/api/users",
+          url: "/users",
           type: "POST",
           data: signUpForm
       })
       .done(function (data) { 
         console.log(data);
         $('#sign-up-form').trigger("reset");
-        $('#sign-up-modal').modal('hide');
+        $('#sign-up-modal').hide();
         $('#greeting').text("Hello " + data.firstname + "!");
         $('.not-logged-in').hide();
         $('.logged-in').show();
@@ -129,8 +119,11 @@ $(document).ready(function(){
   //Login Post
 
   $('#log-in-form').on('submit', function(e) {
-
     e.preventDefault();
+
+    // maybe validate in here. $(this).validate...
+
+
     var loginForm = $(this).serialize();
 
     $.ajax({

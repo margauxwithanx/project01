@@ -13,7 +13,7 @@
             
             
                 <input type="text" id="map-search" id= "marginspacing" class="form-control" name="place" placeholder="Search" autofocus>
-                <form id="new-mark-form">
+                <form id="new-mark-form" method="POST" action="/places">
                     <!-- Hidden  -->
                     <input type="hidden" id="mark-name" name="placeName" value="">
                     <input type="hidden" id="mark-address" name="address" value="">
@@ -22,7 +22,7 @@
 
                     <!-- Visible -->
 
-                    <input type="text" class="form-control" id= "marginspacing" name="city" placeholder="Which city are you in?" required>
+                   <!--  <input type="text" class="form-control" id= "marginspacing" name="city" placeholder="Which city are you in?" required> -->
 
                     <select class="form-control" id= "marginspacing" name="placevisited" required>
                       <option>Hotel</option>
@@ -50,7 +50,7 @@
 
                     <textarea class="form-control" rows="3" id= "marginspacing" name="notes" placeholder="Give us the scoop!" required></textarea>
 
-                     <button type="submit" id= "marginspacing" class="btn btn-primary">SUBMIT</button>
+                     <button type="submit" class="marginspacing" class="btn btn-primary">SUBMIT</button>
 
                 </form>
             </div><!-- form col ends -->

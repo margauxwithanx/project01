@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+  
+  <title>TravelMate | Travel Recommendations By Friends</title>
+
+
+
+<!-- STYLESHEETS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/maps.css">
+    <link href='https://fonts.googleapis.com/css?family=Didact+Gothic' rel='stylesheet' type='text/css'>
+
+    <script src="//code.jquery.com/jquery.js"></script>
+
+<!-- VENDOR SCRIPTS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<% gMaps %>&sensor=false&libraries=places"></script>
+   <!-- remember to not push to github with key--> 
+</head>
+<body>
+
+<!-- NAV BAR -->
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Bar Marks</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+     
+      <ul class="nav navbar-nav navbar-right" id="navbar-right">
+    	<li><a href="#" class="not-logged-in" style="display:none" id="sign-up-btn" data-toggle="modal" data-target="#sign-up-modal">SIGN UP</a></li>
+        <li><a href="#" class="not-logged-in" style="display:none" id ="login-btn" data-toggle="modal" data-target="#login-modal">LOG IN</a></li>
+        <li><a href="#" class="logged-in" style="display:none" id="greeting" ></a></li>
+        <li><a href="/profile" class="logged-in" style="display:none" id="user-profile" >PROFILE</a></li>
+        <li><a href="/logout" class="logged-in" style="display:none" id="logout-btn" >LOG OUT</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<!-- List of User's Active Posts -->
+
+<div class="container col-sm-6 col-sm-offset-3">
+
+  <h1><%=user.username%>'s active marks:</h1>
+  <%if(user.marks.length > 0) { %>
+  <% for(var i = user.marks.length-1; i >= 0; i--) { %>
+  <div class="active-marks">
+    <h3><%= user.marks[i].placeName %></h3><br>
+    <h5><%= user.marks[i].address %></h5><br>
+    <p>City: <%= user.marks[i].city %></p><br>
+    <p>Place Visited: <%= user.marks[i].placeVisited %></p><br>
+    <p>Pricing: <%= user.marks[i].pricing %></p><br>
+    <p>Rating: <%= user.marks[i].rating %></p><br>
+    <p>Notes: <%= user.marks[i].notes %></p><br>
+   </div>
+    <% } %> 
+  <% } %>
+</div>
+
+</body>
+</html>

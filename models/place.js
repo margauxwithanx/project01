@@ -10,7 +10,6 @@ var PlaceSchema = mongoose.Schema({
    address: String,
    latitude: { type: Number, required: true},
    longitude: { type: Number, required: true},
-   		city: String,
    		placeVisited: String,
    		pricing: String,
   		   rating: String,

@@ -1,6 +1,8 @@
 ## **CONCEPT OF PROJECT 01**
 =====================
 
+**Travel Mate**
+
 Time to discover the world with a little help from your friends. You will have your own personal travel agent 
 by your side accessing her recommendations of the city and country that she has visited previously. 
 From accommodation, restaurants, bars & must-see attractions, she has mapped them out and sharing all 
@@ -16,13 +18,10 @@ Well you can ask your friend to share her pinned map with him. This is an easy w
 favorite travel destinations with friends with a clean, color-coded navigational system listing out all you
 need to know about your next travel spot.  
 
-**NAME:**
-- Travel Mate- Chosen!
-- X Marks the Spot
-- Recos –( Short for recommendations )
 
 
+Here is my *[Trello Link](https://trello.com/b/331zLGJC/project-01)* with wireframes, user stories, entity relationship diagram & more within the first column labeled Project 01 & future development ideas in column 5 labeled Ice Ice Baby. 
 
+Here is my *[Submission Form 01](https://docs.google.com/forms/d/1qGmowWWRpWKDsSralVXkgUYgfPcBPPCpgjIZaPZMjnU/viewform?fbzx=2814274452174159457)*
 
-Here is my *[Trello Link](https://trello.com/b/331zLGJC/project-01)* & *[Submission Form 01](https://docs.google.com/forms/d/1qGmowWWRpWKDsSralVXkgUYgfPcBPPCpgjIZaPZMjnU/viewform?fbzx=2814274452174159457)*
 

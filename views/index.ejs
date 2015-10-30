@@ -19,9 +19,10 @@
 <!-- VENDOR SCRIPTS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>-->
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
 
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpiG5ri7hCsG_yWgjvwt9qfun-OGqLEWc&libraries=places"></script>
    <!-- remember to not push to github with key--> 
    
 
@@ -34,23 +35,29 @@
 
 </head>
 <body>
-    <header>
-      <div id="header-inner">
-        <div id="logo">
-        <a href="#">Travel Mate</a>
-        </div>
 
-        <ul>
-          <li><a id="home" class="home" href="/">HOME</a></li>
-          <li><a href="/profile" class="logged-in" style="display:none" id="user-profile" >MY MAP</a></li>
-          <!-- nav bar container and links-->
-          <% include partial/login %>
-        </ul>
-      </div>
-    </header>
+<!-- NAV BAR -->
+<nav>
+    <div class="container-fluid">
+              <div id="navbar-inner">
+              <a class="navbar-brand"  id="logo" href="#">TRAVEL MATE</a>
+              </div>
+                  <ul class="nav navbar-nav navbar-right" id="navbar-right">
+                      <li><a id="home" class="home" href="/">HOME</a></li>
+                      <li><a href="#" class="not-logged-in" id="sign-up-btn" data-toggle="modal" data-target="#sign-up-modal">SIGN UP</a></li>
+                      <li><a href="#" class="not-logged-in" id ="login-btn" data-toggle="modal" data-target="#login-modal">LOG IN</a></li>
+                      <li><a href="#" class="logged-in" id="greeting" ></a></li>
+                      <li><a href="/profile" class="logged-in" id="user-profile" >MY MAP</a></li>
+                      <li><a href="#" class="logged-in" id="logout-btn" >LOGOUT</a></li>
+                  </ul>
+    </div><!-- /.container-fluid -->
+  </nav>
+          
+
     <% include partial/map %>      
 
-  </div>
+<% include partial/login %>
+
 </body>
 
 </html>
