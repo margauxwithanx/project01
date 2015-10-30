@@ -1,6 +1,5 @@
 ## **CONCEPT OF PROJECT 01**
 =====================
-
 **Travel Mate**
 
 Time to discover the world with a little help from your friends. You will have your own personal travel agent 
