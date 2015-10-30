@@ -91,9 +91,6 @@ app.post('/places', function (req, res){
 
 
 
-
-  /////////////
-
 /* PORT
 -------------------------------------------------*/
 app.listen(port, function () {
